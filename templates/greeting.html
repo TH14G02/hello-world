@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Saudação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/greeting.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
+</head>
+<body>
+    <header>
+        <h1>Portal Saúde & Fitness</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('profile') }}">Perfil</a>
+            <a href="{{ url_for('about') }}">Sobre</a>
+            <a href="{{ url_for('imc') }}">IMC</a>
+            <a href="{{ url_for('greeting', nome='Convidado', idade=25, meta='Estar saudável') }}">Saudação</a>
+            <a href="{{ url_for('fertile_period_page') }}">Período Fértil</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Saudação Personalizada</h1>
+        <div class="card">
+            <p>Olá, {{ nome }}!</p>
+            <p>Idade: {{ idade }} anos</p>
+            <p>Meta de saúde: {{ meta }}</p>
+            <p>Estamos aqui para te ajudar a alcançar seus objetivos!</p>
+        </div>
+    </main>
+</body>
+</html>

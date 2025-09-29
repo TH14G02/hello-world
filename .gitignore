@@ -1,1 +1,4 @@
 .venv
+.idx
+__pycache__
+GEMINI.md

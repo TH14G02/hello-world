@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Bem-estar & Fitness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
+</head>
+<body>
+    <header>
+        <h1>Portal Saúde & Fitness</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('profile') }}">Perfil</a>
+            <a href="{{ url_for('about') }}">Sobre</a>
+            <a href="{{ url_for('imc') }}">IMC</a>
+            <a href="{{ url_for('greeting', nome='Convidado', idade=25, meta='Estar saudável') }}">Saudação</a>
+            <a href="{{ url_for('fertile_period_page') }}">Período Fértil</a>
+        </nav>
+    </header>
+    <main>
+        <div class="banner">
+            <img src="https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pessoa levantando peso">
+            <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pessoa se exercitando">
+        </div>
+        <h2>Bem-vindo ao seu espaço de bem-estar</h2>
+        <p>Explore ferramentas para melhorar sua saúde física e mental.</p>
+    </main>
+    <footer>
+        &copy; 2024 Saúde & Fitness
+    </footer>
+</body>
+</html>

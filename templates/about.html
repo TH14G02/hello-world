@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre o Site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
+</head>
+<body>
+    <header>
+        <h1>Portal Saúde & Fitness</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('profile') }}">Perfil</a>
+            <a href="{{ url_for('about') }}">Sobre</a>
+            <a href="{{ url_for('imc') }}">IMC</a>
+            <a href="{{ url_for('greeting', nome='Convidado', idade=25, meta='Estar saudável') }}">Saudação</a>
+            <a href="{{ url_for('fertile_period_page') }}">Período Fértil</a>
+        </nav>
+    </header>
+    <main>
+        <div class="about-content">
+            <h2>Sobre o Portal Saúde & Fitness</h2>
+            <p>Este site foi criado para ajudar pessoas a monitorar e melhorar sua saúde física e mental. Oferecemos ferramentas como:</p>
+            <ul>
+                <li>Calculadoras de IMC</li>
+                <li>Acompanhamento de período fértil</li>
+                <li>E muito mais!</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
