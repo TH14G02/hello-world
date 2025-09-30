@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Bem-estar & Fitness</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="icon" href="/static/icons/favicon.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
 </head>
 <body>
     <header>
         <h1>Portal Saúde & Fitness</h1>
         <nav>
-            <a href="/">Início</a>
-            <a href="/login">Login</a>
-            <a href="/profile">Perfil</a>
-            <a href="/about">Sobre</a>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('profile') }}">Perfil</a>
+            <a href="{{ url_for('about') }}">Sobre</a>
         </nav>
     </header>
     <main>
@@ -51,6 +51,6 @@
     <footer>
         &copy; 2024 Saúde & Fitness
     </footer>
-    <script src="/static/js/index.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>

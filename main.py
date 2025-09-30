@@ -1,30 +1,30 @@
 import os
 
-from flask import Flask, send_file
+from flask import Flask, render_template, send_file
 
 
-app = Flask(__name__, static_folder='src/static')
+app = Flask(__name__, static_folder='src/static', template_folder='templates')
 
 
 # Página inicial
 @app.route('/')
 def index():
-    return send_file('src/index.html')
+    return render_template('index.html')
 
 # Página de login
 @app.route('/login')
 def login():
-    return send_file('src/login.html')
+    return render_template('login.html')
 
 # Página de perfil do usuário
 @app.route('/profile')
 def profile():
-    return send_file('src/profile.html')
+    return render_template('profile.html')
 
 # Página sobre o site
 @app.route('/about')
 def about():
-    return send_file('src/about.html')
+    return render_template('about.html')
 
 @app.route('/favicon.ico')
 def favicon():
@@ -34,13 +34,13 @@ def favicon():
 # Rota específica para IMC (deve vir antes da rota genérica)
 @app.route('/imc/<float:weight>/<float:height>')
 def imc(weight, height):
-    return send_file('src/imc.html')
+    return render_template('imc.html')
 
 
 # Rota genérica para a calculadora
 @app.route('/<op>/<int:a>/<int:b>')
 def oper(op, a, b):
-    return send_file('src/math.html')
+    return render_template('math.html')
 
 
 def main():

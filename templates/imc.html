@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultado do IMC</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/imc.css">
-    <link rel="icon" href="/static/icons/favicon.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imc.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
 </head>
 <body>
     <header>
         <h1>Portal Saúde & Fitness</h1>
         <nav>
-            <a href="/">Início</a>
-            <a href="/login">Login</a>
-            <a href="/profile">Perfil</a>
-            <a href="/about">Sobre</a>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('profile') }}">Perfil</a>
+            <a href="{{ url_for('about') }}">Sobre</a>
         </nav>
     </header>
     <main>
@@ -50,6 +50,6 @@
         </div>
     </main>
 
-    <script src="/static/js/imc.js"></script>
+    <script src="{{ url_for('static', filename='js/imc.js') }}"></script>
 </body>
 </html>

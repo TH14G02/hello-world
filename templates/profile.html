@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Perfil do Usuário</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/profile.css">
-    <link rel="icon" href="/static/icons/favicon.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
 </head>
 <body>
     <header>
         <h1>Portal Saúde & Fitness</h1>
         <nav>
-            <a href="/">Início</a>
-            <a href="/login">Login</a>
-            <a href="/profile">Perfil</a>
-            <a href="/about">Sobre</a>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('profile') }}">Perfil</a>
+            <a href="{{ url_for('about') }}">Sobre</a>
         </nav>
     </header>
     <main>
         <div class="profile-container">
             <div class="profile-header">
-                <img src="/static/images/image.png" alt="Foto do Perfil" class="profile-picture">
+                <img src="{{ url_for('static', filename='images/image.png') }}" alt="Foto do Perfil" class="profile-picture">
                 <h2 id="user-name"></h2>
             </div>
             <div class="profile-body">
@@ -32,6 +32,6 @@
         </div>
     </main>
 
-    <script src="/static/js/profile.js"></script>
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
 </body>
 </html>

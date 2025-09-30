@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Operação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/math.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
+</head>
+<body>
+    <header>
+        <h1>Portal Saúde & Fitness</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('profile') }}">Perfil</a>
+            <a href="{{ url_for('about') }}">Sobre</a>
+        </nav>
+    </header>
+    <main>
+        <div class="result-container" id="result-container">
+            <h3 id="operation-name"></h3>
+            <p id="operation-text"></p>
+            <h2 id="result"></h2>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/math.js') }}"></script>
+</body>
+</html>
