@@ -1,29 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Página Elegante Flask</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <title>Bem-estar & Fitness</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/icons/favicon.ico">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo à Aplicação Flask</h1>
+        <h1>Portal Saúde & Fitness</h1>
         <nav>
-            <a href="/">Home</a>
-            <a href="/about">Sobre</a>
+            <a href="/">Início</a>
+            <a href="/login">Login</a>
             <a href="/profile">Perfil</a>
-            <a href="/imc/70/1.75">Calculadora IMC (Exemplo)</a>
-            <a href="/fertile/15/10/2024">Período Fértil (Exemplo)</a>
+            <a href="/about">Sobre</a>
         </nav>
     </header>
     <main>
-        <h2>Interface Elegante com HTML, CSS e JS</h2>
-        <p>Esta página foi gerada para ser servida por uma aplicação Flask. Ela agora usa uma folha de estilo externa e inclui animações em JavaScript para uma experiência mais dinâmica.</p>
-        <img src="../static/image.png" alt="Imagem decorativa">
+        <div class="banner">
+            <img src="https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pessoa levantando peso">
+            <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pessoa se exercitando">
+        </div>
+        <h2>Bem-vindo ao seu espaço de bem-estar</h2>
+        <p>Explore ferramentas para melhorar sua saúde física e mental.</p>
+
+        <div class="calculator">
+            <h2>Calculadora de IMC</h2>
+            <form id="imc-form">
+                <input type="number" id="weight" placeholder="Peso (kg, Ex: 70.5)" step="0.1" required>
+                <input type="number" id="height" placeholder="Altura (cm, Ex: 175.5)" step="0.1" required>
+                <button type="submit">Calcular IMC</button>
+            </form>
+        </div>
+
+        <div class="calculator">
+            <h2>Calculadora</h2>
+            <form id="calc-form">
+                <input type="number" id="a" placeholder="Valor A (Ex: 10)" required>
+                <select id="op">
+                    <option value="soma">Soma</option>
+                    <option value="sub">Subtração</option>
+                    <option value="mul">Multiplicação</option>
+                    <option value="div">Divisão</option>
+                </select>
+                <input type="number" id="b" placeholder="Valor B (Ex: 5)" required>
+                <button type="submit">Calcular</button>
+            </form>
+        </div>
     </main>
     <footer>
-        &copy; 2024 Aplicação Flask. Todos os direitos reservados.
+        &copy; 2024 Saúde & Fitness
     </footer>
+    <script>
+        document.getElementById('imc-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const weight = parseFloat(document.getElementById('weight').value).toFixed(1);
+            const height = parseFloat(document.getElementById('height').value).toFixed(1);
+            window.location.href = `/imc/${weight}/${height}`;
+        });
+
+        document.getElementById('calc-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const a = document.getElementById('a').value;
+            const b = document.getElementById('b').value;
+            const op = document.getElementById('op').value;
+            window.location.href = `/${op}/${a}/${b}`;
+        });
+    </script>
 </body>
 </html>

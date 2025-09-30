@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Operação</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/math.css">
+    <link rel="icon" href="/static/icons/favicon.ico">
+</head>
+<body>
+    <header>
+        <h1>Portal Saúde & Fitness</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/login">Login</a>
+            <a href="/profile">Perfil</a>
+            <a href="/about">Sobre</a>
+        </nav>
+    </header>
+    <main>
+        <div class="result-container" id="result-container">
+            <h3 id="operation-name"></h3>
+            <p id="operation-text"></p>
+            <h2 id="result"></h2>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pathParts = window.location.pathname.split('/');
+            const operation = pathParts[pathParts.length - 3];
+            const num1 = parseFloat(pathParts[pathParts.length - 2]);
+            const num2 = parseFloat(pathParts[pathParts.length - 1]);
+
+            const operations = {
+                soma: { name: 'Adição', symbol: '+' },
+                sub: { name: 'Subtração', symbol: '-' },
+                mul: { name: 'Multiplicação', symbol: '*' },
+                div: { name: 'Divisão', symbol: '/' }
+            };
+
+            const { name, symbol } = operations[operation] || { name: 'Operação Desconhecida', symbol: '?' };
+
+            function calculate(op, n1, n2) {
+                if (isNaN(n1) || isNaN(n2)) {
+                    return {
+                        result: "Valores inválidos",
+                        operationText: "Por favor, insira números válidos."
+                    };
+                }
+
+                let result;
+                switch (op) {
+                    case 'soma':
+                        result = n1 + n2;
+                        break;
+                    case 'sub':
+                        result = n1 - n2;
+                        break;
+                    case 'mul':
+                        result = n1 * n2;
+                        break;
+                    case 'div':
+                        result = n2 !== 0 ? n1 / n2 : 'Erro: Divisão por zero';
+                        break;
+                    default:
+                        result = 'Operação inválida';
+                }
+
+                return {
+                    result: result,
+                    operationText: `${n1} ${symbol} ${n2}`
+                };
+            }
+
+            const { result, operationText } = calculate(operation, num1, num2);
+
+            document.getElementById('operation-name').innerText = name;
+            document.getElementById('operation-text').innerText = operationText;
+            document.getElementById('result').innerText = result;
+
+            setTimeout(() => {
+              document.getElementById('result-container').classList.add('show');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
