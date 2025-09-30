@@ -4,6 +4,9 @@ from flask import Flask, send_file
 
 
 app = Flask(__name__, static_folder='src/static')
+# ou
+# app = Flask(__name__)
+# app.static_folder = 'src/static'
 
 
 # Página inicial
