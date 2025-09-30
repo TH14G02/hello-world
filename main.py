@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template, send_file
 
 
-app = Flask(__name__, static_folder='src/static', template_folder='templates')
+app = Flask(__name__, static_folder='src/static', template_folder='src/templates')
 
 
 # Página inicial
