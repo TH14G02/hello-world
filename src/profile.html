@@ -19,25 +19,19 @@
     </header>
     <main>
         <div class="profile-container">
-            <h2>Perfil do Usuário</h2>
-            <p><strong>Nome:</strong> <span id="nome-usuario"></span></p>
-            <p><strong>Senha:</strong> <span id="senha-usuario"></span></p>
+            <div class="profile-header">
+                <img src="/static/images/image.png" alt="Foto do Perfil" class="profile-picture">
+                <h2 id="user-name"></h2>
+            </div>
+            <div class="profile-body">
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+                <p><strong>Telefone:</strong> <span id="user-phone"></span></p>
+                <p><strong>Data de Nascimento:</strong> <span id="user-birthdate"></span></p>
+                <p><strong>Cidade:</strong> <span id="user-city"></span></p>
+            </div>
         </div>
     </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const usuario = params.get('usuario');
-            const senha = params.get('senha');
 
-            if (usuario && senha) {
-                document.getElementById('nome-usuario').innerText = usuario;
-                document.getElementById('senha-usuario').innerText = senha;
-            } else {
-                document.getElementById('nome-usuario').innerText = 'N/A';
-                document.getElementById('senha-usuario').innerText = 'N/A';
-            }
-        });
-    </script>
+    <script src="/static/js/profile.js"></script>
 </body>
 </html>
