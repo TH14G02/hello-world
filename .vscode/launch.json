@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Flask (Debug)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "main",
+                "FLASK_ENV": "development",
+                "PORT": "80"
+            },
+            "args": [
+                "run",
+                // Removendo --no-debugger e --no-reload para que FLASK_ENV=development ative o debugger e reloader do Flask
+                "--port", "80", // Mantém a porta definida
+                "--host", "0.0.0.0"
+            ],
+            "jinja": true,
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

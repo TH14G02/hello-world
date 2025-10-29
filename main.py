@@ -50,10 +50,8 @@ def oper(op, a, b):
                            result=result)
 
 
-def main():
-    port = int(os.environ.get('PORT', 80))
+if __name__ == '__main__':
+    # Define a porta a partir da variável de ambiente PORT, ou usa 5000 como padrão
+    # A porta 80 geralmente requer privilégios de administrador, então 5000 é mais comum para desenvolvimento.
+    port = int(os.environ.get('PORT', 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
-
-
-if __name__ == "__main__":
-    main()
