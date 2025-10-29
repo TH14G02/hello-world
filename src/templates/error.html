@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Erro - Operação Inválida</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/math.css">
+    <link rel="icon" href="/static/icons/favicon.ico">
+</head>
+<body>
+    <header>
+        <h1>Portal Saúde & Fitness</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/login">Login</a>
+            <a href="/profile">Perfil</a>
+            <a href="/about">Sobre</a>
+        </nav>
+    </header>
+    <main>
+        <div class="result-container show"> <!-- Adicionando a classe 'show' para garantir a visibilidade -->
+            <h3>Erro {{ status_code }}</h3>
+            <p>{{ error_message }}</p>
+            <br>
+            <a href="/" class="back-button">Voltar</a>
+        </div>
+    </main>
+</body>
+</html>
