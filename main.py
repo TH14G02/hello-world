@@ -39,14 +39,14 @@ def oper(op: str, a: int, b: int):
                                        status_code=400), 400
             result = a / b
     except Exception as e:
-        return render_template('error.html', error_message=f"Ocorreu um erro inesperado no servidor: {e}",
-                               status_code=500), 500
+        return redirect(url_for('index'))
 
     return render_template('math.html', name=operation_info['name'].upper(),
                            operation_text=f"{a} {operation_info['symbol']} {b}",
                            result=result)
 
 # Rota de exemplo que redireciona para uma operação padrão usando url_for
+@app.route('/soma/')
 @app.route('/soma')
 def soma():
     # Redireciona para a rota 'oper' com os parâmetros definidos
