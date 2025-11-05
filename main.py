@@ -62,13 +62,13 @@ def subtracao():
 @app.route('/multiplicacao')
 def multiplicacao():
     # Redireciona para a rota 'oper' com os parâmetros definidos
-    return redirect(url_for('oper', op='mul', a=10, b=5))
+    return redirect(url_for('oper', op='mul', a=10, b=5), 302)
 
 # Rota de exemplo que redireciona para uma operação padrão usando url_for
 @app.route('/divisao')
 def divisao():
     # Redireciona para a rota 'oper' com os parâmetros definidos
-    return redirect(url_for('oper', op='div', a=10, b=5))
+    return redirect(url_for('oper', op='div', a=10, b=5), 302)
 
 
 if __name__ == '__main__':
