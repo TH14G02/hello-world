@@ -10,16 +10,13 @@ def index():
     return render_template('index.html')
 
 # Rota genérica para a calculadora
-@app.route('/<op>/<int:a>/<int:b>')
-def oper(op: str, a: int, b: int):
+@app.route('/<IMC>/<int:a>/<int:b>')
+def oper(IMC: str, a: int, b: int):
     operations = {
-        'soma': {'name': 'Adição', 'symbol': '+'},
-        'sub': {'name': 'Subtração', 'symbol': '-'},
-        'mul': {'name': 'Multiplicação', 'symbol': '*'},
-        'div': {'name': 'Divisão', 'symbol': '/'}
+        'IMC': {'name': 'IMC', 'symbol': '/'}
     }
 
-    operation_info = operations.get(op)
+    operation_info = operations.get(IMC)
 
     if not operation_info:
         return render_template('error.html', error_message="A operação solicitada não foi encontrada.",
@@ -27,13 +24,7 @@ def oper(op: str, a: int, b: int):
 
     result = 0
     try:
-        if op == 'soma':
-            result = a + b
-        elif op == 'sub':
-            result = a - b
-        elif op == 'mul':
-            result = a * b
-        elif op == 'div':
+        if IMC == 'div':
             if b == 0:
                 return render_template('error.html', error_message="Não é possível dividir por zero.",
                                        status_code=400), 400
